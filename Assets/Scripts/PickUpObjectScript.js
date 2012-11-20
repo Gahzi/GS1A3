@@ -28,6 +28,8 @@ function Update(){
 	                pickObj = hit.transform; // now there's an object picked
 	                pickObj.gameObject.renderer.enabled = false;
 	                pickObj.gameObject.active = false;
+	                this.transform.gameObject.GetComponentInChildren.<PaintScript>().sprayAmount = 600;
+	                
 	                //Debug.Log("renderer is false");
 	                // remember its distance from the camera
 	                dist = Vector3.Distance(pickObj.position, Camera.main.transform.position);

@@ -1,10 +1,16 @@
+public var sprayAmount : float;
 // Attach this script to a camera and it will paint black pixels in 3D 
 // on whatever the user clicks. Make sure the mesh you want to paint 
 // on has a mesh collider attached.
+
+function Start () {
+	sprayAmount = 0;
+}
+
 function Update () {
 	
     // Only when we press the mouse
-    if (!Input.GetMouseButton (0))
+    if (!Input.GetMouseButton (0) && sprayAmount > 0)
         return;
 	
     // Only if we hit something, do we continue
@@ -31,4 +37,6 @@ function Update () {
     tex.SetPixel(pixelUV.x, pixelUV.y, Color.red);
  
     tex.Apply();
+    sprayAmount -= 1;
+    Debug.Log(sprayAmount);
 }
