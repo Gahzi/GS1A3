@@ -10,7 +10,7 @@ function Start () {
 function Update () {
 	
     // Only when we press the mouse
-    if (!Input.GetMouseButton (0) && sprayAmount > 0)
+    if (!Input.GetMouseButton (0) || !(sprayAmount > 0))
         return;
 	
     // Only if we hit something, do we continue
