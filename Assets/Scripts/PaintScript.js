@@ -16,7 +16,7 @@ function Update () {
     // Only if we hit something, do we continue
     var hit : RaycastHit;
     
-    if (!Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition),hit,7.0f)) {
+    if (!Physics.Raycast(camera.ScreenPointToRay(Vector3(Screen.width * 0.5, Screen.height * 0.5,0)),hit,7.0f)) {
     	Debug.Log("Raycast Missed!");
         return;
     }
